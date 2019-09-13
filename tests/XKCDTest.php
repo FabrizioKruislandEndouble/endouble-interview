@@ -12,7 +12,7 @@ class XKCDTest extends TestCase
      */
     public function testPostNumber()
     {
-        $this->get('api/data?sourceId=comics&year=2013&limit=1');
+        $this->get('api/comics?year=2013&limit=1');
 
         $response = json_decode($this->response->getContent());
 
@@ -28,7 +28,7 @@ class XKCDTest extends TestCase
      */
     public function testLimit()
     {
-        $this->get('api/data?sourceId=comics&year=2013&limit=2');
+        $this->get('api/comics?year=2013&limit=2');
 
         $response = json_decode($this->response->getContent());
 
@@ -44,7 +44,7 @@ class XKCDTest extends TestCase
      */
     public function testYear()
     {
-        $this->get('api/data?sourceId=comics&year=2007&limit=1');
+        $this->get('api/comics?year=2007&limit=1');
 
         $response = json_decode($this->response->getContent());
 
