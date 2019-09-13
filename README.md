@@ -5,6 +5,7 @@ This project is the result of the Back-end assessment given by Endouble.
 - [Assessment](#assessment)
 - [Installation](#installation)
 - [API](#api)
+- [Testing](#testing)
 
 
 ## Assessment
@@ -116,7 +117,7 @@ vagrant ssh
 ```
 
 ```bash
-cd /vagrant/endouble-interview
+cd endouble-interview
 ```
 
 ```bash
@@ -144,4 +145,13 @@ The values for the parameters are dynamic, so you can easily filter for the resu
 **year:** 2019
 
 **limit:** 2
+
+## Testing
+
+For testing purposes there are tests for the Spacex and XKCD API. You can easily run the test by running the following command in your projcet root.
+
+```bash
+phpunit
+```
+
 
