@@ -131,16 +131,15 @@ Great! You are good to go. Now everything is running and installed you can inter
 
 ### Endpoints
 
-Seen the scope of this assessment I chose to create one API endpoint with multiple query parameters which you could use to filter 
+Seen the scope of this assessment I chose to create two API endpoint with multiple query parameters which you could use to filter 
 
-```php
-/api/data
+```python
+/api/spacex
+/api/comics
 ```
 
 ### Params
-The values for the parameters are dynamic, so you can easily filter for the result you expect. For now there are two sourceId's being handled, if you wish to add another sourceId you could easily create a new DataSourceAdapter and handle this sourceId aswel.
-
-**sourceId:** ['spacex', 'comics', ...]
+The values for the parameters are dynamic, so you can easily filter for the result you expect.
 
 **year:** 2019
 
