@@ -2,9 +2,9 @@
 
 This project is the result of the Back-end assessment given by Endouble.
 
-- [Assessment](/#assessment)
-- [Installation](/#installation)
-- [API](/#api)
+- [Assessment](#assessment)
+- [Installation](#installation)
+- [API](#api)
 
 
 ## Assessment
