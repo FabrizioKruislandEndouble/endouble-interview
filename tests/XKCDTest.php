@@ -1,9 +1,12 @@
 <?php
 
+/**
+ * XKCD Test
+ */
 class XKCDTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Test post number returned for specific year and limit
      *
      * @return void
      */
@@ -19,7 +22,7 @@ class XKCDTest extends TestCase
     }
 
     /**
-     * A basic test example.
+     * Test limit on posts
      *
      * @return void
      */
@@ -35,7 +38,7 @@ class XKCDTest extends TestCase
     }
 
     /**
-     * A basic test example.
+     * Test year on posts
      *
      * @return void
      */
