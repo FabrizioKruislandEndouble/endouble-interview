@@ -29,11 +29,11 @@ class XKCDBuilder implements DataSourceBuilderInterface {
      * @return \App\DataSource
      */
     public function map($data): \App\DataSource {
-        $this->datasource->setNumber($data->num);
-        $this->datasource->setDate($this->buildDate($data->year, $data->month, $data->day));
-        $this->datasource->setName($data->safe_title);
-        $this->datasource->setLink($data->link);
-        $this->datasource->setDetails($data->transcript);
+        $this->datasource->number = $data->num;
+        $this->datasource->date = $this->buildDate($data->year, $data->month, $data->day);
+        $this->datasource->name = $data->safe_title;
+        $this->datasource->link = $data->link;
+        $this->datasource->details = $data->transcript;
 
         return $this->datasource;
     }

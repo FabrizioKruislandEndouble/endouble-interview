@@ -29,11 +29,11 @@ class SpacexBuilder implements DataSourceBuilderInterface {
      * @return \App\DataSource
      */
     public function map($data): \App\DataSource {
-        $this->datasource->setNumber($data->flight_number);
-        $this->datasource->setDate($this->formatDate($data->launch_date_utc));
-        $this->datasource->setName($data->mission_name);
-        $this->datasource->setLink($data->links->article_link);
-        $this->datasource->setDetails($data->details);
+        $this->datasource->number = $data->flight_number;
+        $this->datasource->date = $this->formatDate($data->launch_date_utc);
+        $this->datasource->name = $data->mission_name;
+        $this->datasource->link = $data->links->article_link;
+        $this->datasource->details = $data->details;
 
         return $this->datasource;
     }
