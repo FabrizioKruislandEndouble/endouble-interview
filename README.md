@@ -6,6 +6,7 @@ This project is the result of the Back-end assessment given by Endouble.
 - [Installation](#installation)
 - [API](#api)
 - [Testing](#testing)
+- [Discussion](#discussion)
 
 
 ## Assessment
@@ -153,4 +154,17 @@ For testing purposes there are tests for the Spacex and XKCD API. You can easily
 phpunit
 ```
 
+## Discussion
+
+### Language
+Seen the fact that the main coding language for this Back-end position most likely will be PHP I chose to write this REST API in PHP. Considering the amount of requests we have to do so we can find posts in a specific year from the XKCD API, Python would maybe have been a better choice (Considering the amount of requests per second).
+
+### Framework
+When it comes to PHP frameworks, Laravel is almost always my first choice. This is mainly due to my experience with Laravel and the speed of development. Seen the scope of this project, no database and no front-end, I chose Lumen instead of Laravel. Yes I could have chosen to use Symphony, but this also felt like an overly large approach. Would I have wrote this project in Python my chose would have go to Django.
+
+### Installation/Set-up
+Homestead? Why not use php artisan serve.. Well this is on of the nice things that is not included in Lumen by default. Assuming you all have a PHP vagrant box I think this installation wouldn't be a problem for you. If you want to run the project via Homestead you can do so by following the [Installation](#installation) manual.
+
+### Architecture
+TO DO:: write down choises of architecture
 
