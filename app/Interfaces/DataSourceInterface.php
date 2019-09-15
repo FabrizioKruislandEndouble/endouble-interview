@@ -12,8 +12,9 @@ interface DataSourceInterface
     /**
      * Retrieve the formatted data from a datasource
      * 
+     * @param string $datasource Datasource key
      * @param array $params Parameters to filter request
      * @return array Formatted data from datasource
      */
-    public function get(array $params);
+    public function get(string $datasource, array $params);
 }

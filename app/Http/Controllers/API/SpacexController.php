@@ -22,7 +22,7 @@ class SpacexController extends Controller
 
         $datasource = new DataSourceAdapter(new SpacexAdaptee());
         
-        return $datasource->get($queryParams);
+        return $datasource->get('space', $queryParams);
 
     }
 }

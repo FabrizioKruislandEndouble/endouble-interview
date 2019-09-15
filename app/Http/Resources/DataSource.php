@@ -24,9 +24,11 @@ class DataSource extends Resource
 
     public function __construct($resource)
     {
+        $request = array_merge(['sourceId' => $resource['datasource']], $resource['params']);
+
         // Set meta data
         $this->meta = [
-            'request' => $resource['params'],
+            'request' => $request,
             'timestamp' => Carbon::now('UTC')->format('Y-m-d\Th:i:s:mm\Z'),
         ];
 

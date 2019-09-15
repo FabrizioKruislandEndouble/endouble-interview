@@ -22,6 +22,6 @@ class ComicsController extends Controller
 
         $datasource = new DataSourceAdapter(new XKCDAdaptee());
         
-        return $datasource->get($queryParams);
+        return $datasource->get('comics', $queryParams);
     }
 }

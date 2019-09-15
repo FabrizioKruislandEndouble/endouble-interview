@@ -26,11 +26,12 @@ class DataSourceAdapter implements DataSourceInterface
     /**
      * Retrieve the formatted data from a datasource
      * 
+     * @param string $datasource Datasource key
      * @param array $params Parameters to filter request
      * @return array Formatted data from datasource
      */
-    public function get(array $params): array
+    public function get(string $datasource, array $params): array
     {
-        return DataSource::make(['params'=> $params ,'data' => $this->dataSourceAdaptee->get($params)])->resolve();
+        return DataSource::make(['datasource' => $datasource, 'params'=> $params ,'data' => $this->dataSourceAdaptee->get($params)])->resolve();
     }
 }
