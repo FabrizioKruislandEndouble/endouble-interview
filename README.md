@@ -166,5 +166,18 @@ When it comes to PHP frameworks, Laravel is almost always my first choice. This 
 Homestead? Why not use php artisan serve.. Well this is on of the nice things that is not included in Lumen by default. Assuming you all have a PHP vagrant box I think this installation wouldn't be a problem for you. If you want to run the project via Homestead you can do so by following the [Installation](#installation) manual.
 
 ### Architecture
-TO DO:: write down choises of architecture
+Since the API backend need to connect to one or more remote sources and retrieve data through an appropriate connector module and transform it accordingly before outputting it. I chose to use the adapter design pattern, in my opinion the adapter design pattern fits best with the needs for this assignment. The adapter pattern let us connect existing interfaces which are not compatible by default. In this case I chose to make a specific Adaptee for each datasource. Because each datasource now has an adapter we can use the same interface for each datasource. This choice has also ensured that the connector modules are decoupled from the main API.
+
+Because the output from each datasource had to be in the same format, I chose to use the builder pattern. Yes, I could have used a transformer/parser. However, I didn't because future datasource might need extensive build functionality. At the moment, datasource objects are being build based on the datasource data.
+
+#### Spacex
+The spacex API was relatively easy to implement. Because of this the SpacexAdaptee is relatively small.
+
+#### XKCD
+The XKCD API was a little less easy to navigate. Because this API has no special endpoints or option to use query parameters I had to build a small workaround. Since I thought it would be a bit unnecessary to pick up all 2002 posts and then only return the posts from the requested year, I started looking for a more efficient/eloquent way to do this. After some time I found out that the API was ASC sorted grouped by posting date (0 => first post ever, 2002 =>last post). Giving the fact we have a ASC sorted array a binarry search approach felt right. Since we want to return all the post from a giving year I had to found a way to find the post before and after the first found post using the binarysearch. Luckily we are dealing with a sorted data set so I can easily search (N times) before and after the first found post. 
+
+Result: You can now search for posts in a giving year. The first post will be found with a big O of O(log n). The big O for every other post to befound before or after this post will be O(n).
+
+
+
 
