@@ -51,10 +51,8 @@ class XKCDAdaptee extends DataSourceAdaptee {
     public function get(array $params): array {        
         $posts = [];
 
-        if($params) {
-            // Retireve all the posts based on given parameters
-            $posts = $this->findPosts($this->parseQueryParams($params));
-        }
+        // Retireve all the posts based on given parameters
+        $posts = $this->findPosts($this->parseQueryParams($params));
 
         if ($posts) {
             if(!is_array($posts)) {
@@ -94,14 +92,14 @@ class XKCDAdaptee extends DataSourceAdaptee {
 
             // Use binarySearch to find all the posts
             $posts = $this->binarySearch($year, $firstPost, $lastPost);
+
+            // Sort the posts ASC
+            sort($posts);
         } else {
 
             // If there is no year specified return the last post
-            $posts = $this->request($this->apiBaseUrl . $this->suffix);
+            $posts[] = $this->request($this->apiBaseUrl . $this->suffix);
         }
-
-        // Sort the posts ASC
-        sort($posts);
 
         // If there is a limit, than limit the amount of results accordignly
         if (array_key_exists('limit', $params)) {
